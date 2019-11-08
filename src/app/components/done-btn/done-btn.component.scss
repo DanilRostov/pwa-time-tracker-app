@@ -1,0 +1,36 @@
+.button + label {
+  display: block;
+  cursor: pointer;
+}
+
+.button {
+  display: none;
+}
+
+.button + label:before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  content: "\2714";
+  border: 0.1em solid #EF6C00;
+  border-radius: 20px;
+  color: transparent;
+  transition: .2s;
+}
+
+.button + label:active:before {
+  transform: scale(0);
+}
+
+.button:checked + label:before {
+  background-color: #EF6C00;
+  border-color: #EF6C00;
+  color: #fff;
+}
+
+.button:disabled + label:before {
+  transform: scale(1);
+  border-color: #aaa;
+}

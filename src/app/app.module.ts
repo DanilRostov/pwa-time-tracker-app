@@ -17,6 +17,7 @@ import { MooveNextBtnComponent } from './components/moove-next-btn/moove-next-bt
 import { CreateBtnComponent } from './components/create-btn/create-btn.component';
 import { CreateModalComponent } from './components/create-modal/create-modal.component';
 import { LocationModalComponent } from './components/location-modal/location-modal.component';
+import { RemoveBtnComponent } from './components/remove-btn/remove-btn.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { LocationModalComponent } from './components/location-modal/location-mod
     MooveNextBtnComponent,
     CreateBtnComponent,
     CreateModalComponent,
-    LocationModalComponent
+    LocationModalComponent,
+    RemoveBtnComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+.tasks-counter {
+  display: flex;
+  align-items: flex-start;;
+  flex-direction: column;
+}
+
+.counter-item {
+  margin-top: 2px;
+  font-size: 12px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
