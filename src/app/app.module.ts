@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +21,8 @@ import { CreateBtnComponent } from './components/create-btn/create-btn.component
 import { CreateModalComponent } from './components/create-modal/create-modal.component';
 import { LocationModalComponent } from './components/location-modal/location-modal.component';
 import { RemoveBtnComponent } from './components/remove-btn/remove-btn.component';
+import { tasksReducer } from './reducers/tasks.reducer';
+import { TasksEffects } from './effects/tasks.effects';
 
 @NgModule({
   declarations: [
@@ -40,7 +45,10 @@ import { RemoveBtnComponent } from './components/remove-btn/remove-btn.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot({ tasks: tasksReducer }),
+    EffectsModule.forRoot([ TasksEffects ]),
+    StoreDevtoolsModule.instrument(),
   ],
   providers: [],
   bootstrap: [AppComponent]
