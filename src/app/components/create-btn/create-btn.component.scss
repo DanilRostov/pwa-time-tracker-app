@@ -1,13 +1,15 @@
 .create {
-  position: absolute;
+  position: fixed;
   width: 100%;
   bottom: 0;
   padding: 8px;
   display: flex;
   justify-content: space-between;
+  background-color: #fff;
 }
 
 .input {
+  margin: 0;
   flex-grow: 1;
   padding: 4px;
   font-size: 14px;
@@ -17,6 +19,7 @@
 }
 
 .button {
+  margin: 0;
   font-size: 18px;
   border: none;
   padding: 12px 8px;

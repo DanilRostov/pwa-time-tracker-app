@@ -13,11 +13,11 @@
   align-items: center;
   width: 20px;
   height: 20px;
-  content: "\2714";
+  content: "";
   border: 0.1em solid #FFD54F;
   border-radius: 20px;
   color: transparent;
-  transition: .2s;
+  transition: .1s;
 }
 
 .button + label:active:before {

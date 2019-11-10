@@ -1,5 +1,6 @@
 export const tasks = [
   {
+    id: 'id1',
     isPlanned: true,
     isDone: true,
     title: 'Buy products for the dinner with some interesting drinks. So here is also a long title',
@@ -7,6 +8,7 @@ export const tasks = [
     estimation: 0.5,
   },
   {
+    id: 'id2',
     isPlanned: true,
     isDone: true,
     title: 'Finish story with facets',
@@ -14,6 +16,7 @@ export const tasks = [
     estimation: 3,
   },
   {
+    id: 'id3',
     isPlanned: true,
     isDone: true,
     title: 'Meeting with Vlad',
@@ -21,6 +24,7 @@ export const tasks = [
     estimation: 1,
   },
   {
+    id: 'id4',
     isPlanned: false,
     isDone: true,
     title: 'Read book',
@@ -28,6 +32,7 @@ export const tasks = [
     estimation: 1,
   },
   {
+    id: 'id5',
     isPlanned: true,
     isDone: false,
     title: 'Creat new patterns of beat',
@@ -35,6 +40,7 @@ export const tasks = [
     estimation: 2,
   },
   {
+    id: 'id6',
     isPlanned: true,
     isDone: false,
     title: 'Send photos to the cloud',
@@ -42,6 +48,7 @@ export const tasks = [
     estimation: 0.5,
   },
   {
+    id: 'id7',
     isPlanned: false,
     isDone: false,
     title: 'Go the the GYM',

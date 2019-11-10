@@ -7,6 +7,7 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 })
 export class DoneBtnComponent implements OnInit {
   @Input() public isDone: boolean;
+  @Input() public id: string;
   @ViewChild('input') public input: ElementRef;
 
   public ngOnInit() {
