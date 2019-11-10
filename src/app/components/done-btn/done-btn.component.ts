@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-done-btn',
@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./done-btn.component.scss']
 })
 export class DoneBtnComponent implements OnInit {
+  @Input() public isDone: boolean;
+  @ViewChild('input') public input: ElementRef;
 
-  constructor() { }
-
-  ngOnInit() {
+  public ngOnInit() {
+    this.input.nativeElement.checked = this.isDone;
   }
-
 }

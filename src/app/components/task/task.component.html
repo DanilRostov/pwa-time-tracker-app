@@ -1,8 +1,9 @@
 <div class="task">
-  <app-done-btn></app-done-btn>
+  <app-done-btn [isDone]="task.isDone"></app-done-btn>
   <div class="text">
-    <span class="prefix">[Prefix]</span>
-    <span class="title">Task title</span>
+    <span class="prefix">[{{task.prefix}}]</span>
+    <span class="title">{{task.title}}</span>
+    <span class="estimation">({{task.estimation}})</span>
   </div>
-  <!-- <app-moove-next-btn></app-moove-next-btn> -->
+  <app-moove-next-btn *ngIf="!task.isDone && task.isPlanned"></app-moove-next-btn>
 </div>

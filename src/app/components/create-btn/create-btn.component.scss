@@ -1,0 +1,33 @@
+.create {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  flex-grow: 1;
+  padding: 4px;
+  font-size: 14px;
+  border: 1px solid #EF6C00;
+  border-radius: 4px 0 0 4px;
+  color: #424242;
+}
+
+.button {
+  font-size: 18px;
+  border: none;
+  padding: 12px 8px;
+  color: #fff;
+
+  &--create {
+    border-radius: 0 4px 4px 0;
+    background-color: #E65100;
+  }
+
+  &--location {
+    background-color: #EF6C00;
+  }
+}

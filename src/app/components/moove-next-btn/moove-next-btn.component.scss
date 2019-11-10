@@ -1,0 +1,13 @@
+:host {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  border: none;
+  background-color: #E65100;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #fff;
+}

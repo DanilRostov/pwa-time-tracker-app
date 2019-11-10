@@ -1,6 +1,6 @@
 <div class="day">
-  <app-category></app-category>
-  <app-category></app-category>
-  <app-category></app-category>
+  <app-category [type]="types.notPlannedAndDone" [tasks]="notPlannedAndDoneTasks"></app-category>
+  <app-category [type]="types.plannedAndDone" [tasks]="plannedAndDoneTasks"></app-category>
+  <app-category [type]="types.planned" [tasks]="plannedTasks"></app-category>
 </div>
 

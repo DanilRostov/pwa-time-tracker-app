@@ -1,14 +1,19 @@
 .task {
-  margin-bottom: 12px;
+  padding: 12px 8px;
   display: flex;
   align-items: center;
+  background-color: #FFFDE7;
+}
+
+.text {
+  margin-left: 4px;
 }
 
 .prefix {
-  margin-left: 4px;
   font-size: 14px;
   font-weight: bold;
-  color: #FFD54F;
+  color: #EF6C00;
+  opacity: 0.7;
 }
 
 .title {
@@ -16,3 +21,10 @@
   font-size: 14px;
   color: #424242;
 } 
+
+.estimation {
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #EF6C00;
+}

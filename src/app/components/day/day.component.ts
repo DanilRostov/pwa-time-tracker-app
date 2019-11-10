@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component, 
+  OnInit,
+} from '@angular/core';
+import { TaskService } from 'src/app/services/task.service';
+import { TYPES } from 'src/app/consts/tasks';
 
 @Component({
   selector: 'app-day',
@@ -6,10 +11,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./day.component.scss']
 })
 export class DayComponent implements OnInit {
+  public notPlannedAndDoneTasks = [];
+  public plannedAndDoneTasks = [];
+  public plannedTasks = [];
+  public types = TYPES;
 
-  constructor() { }
+  constructor(
+    public taskService: TaskService,
+  ) { }
 
-  ngOnInit() {
+  public ngOnInit() {
+    this.loadAndFilterTasks();
   }
 
+  public loadAndFilterTasks() {
+    const allTasks = this.taskService.getTasks();
+    this.notPlannedAndDoneTasks = allTasks.filter((task) => !task.isPlanned && task.isDone);
+    this.plannedAndDoneTasks = allTasks.filter((task) => task.isPlanned && task.isDone);
+    this.plannedTasks = allTasks.filter((task) => task.isPlanned && !task.isDone);
+  }
 }

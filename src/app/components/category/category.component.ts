@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+  Component, 
+  OnInit, 
+  Input,
+} from '@angular/core';
+import { TYPES } from 'src/app/consts/tasks';
 
 @Component({
   selector: 'app-category',
@@ -6,6 +11,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
+  @Input() public type: string;
+  @Input() public tasks: [];
+  public types = TYPES;
 
   constructor() { }
 

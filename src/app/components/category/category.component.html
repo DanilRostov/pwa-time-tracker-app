@@ -1,1 +1,8 @@
-<app-task></app-task>
+<div class="category">
+  <h2 class="title" [ngSwitch]="type">
+    <ng-container *ngSwitchCase="types.notPlannedAndDone">Not planned and done</ng-container>
+    <ng-container *ngSwitchCase="types.plannedAndDone">Planned and done</ng-container>
+    <ng-container *ngSwitchCase="types.planned">Planned</ng-container>
+  </h2>
+  <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+</div>
