@@ -34,6 +34,7 @@ export class LoadTasksFailure implements Action {
 
 export class CreateTask implements Action {
   public readonly type = CREATE_TASK;
+  constructor(public payload: Task) {}
 }
 
 export class CreateTaskComplete implements Action {

@@ -10,4 +10,8 @@ export class TaskService {
   public getTasks() {
     return of(tasks);
   }
+
+  public createTask(task) {
+    return of(task);
+  }
 }

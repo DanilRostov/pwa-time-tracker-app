@@ -1,6 +1,6 @@
 <div class="create">
-  <input class="input" type="text">
+  <input class="input" type="text" [formControl]="title">
   <!-- <button class="button button--location">Location</button> -->
-  <button class="button button--create">Create</button>
+  <button class="button button--create" (click)="onCreateClick()">Create</button>
 </div>
 

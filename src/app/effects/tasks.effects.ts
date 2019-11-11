@@ -18,6 +18,10 @@ import {
   LOAD_TASKS, 
   LoadTasksComplete, 
   LoadTasksFailure,
+  CREATE_TASK,
+  CreateTaskComplete,
+  CreateTaskFailure,
+  CreateTask,
 } from '../actions/tasks.actions';
 import { TaskService } from '../services/task.service';
 import { Task } from '../models/tasks';
@@ -31,6 +35,16 @@ export class TasksEffects {
     switchMap(() => this.taskService.getTasks().pipe(
       map((tasks: Task[]) => new LoadTasksComplete(tasks)),
       catchError((error) => of(new LoadTasksFailure(error))),
+    )),
+  );
+
+  @Effect()
+  public createTask: Observable<TasksActions> = this.actions$.pipe(
+    ofType(CREATE_TASK),
+    map((action: CreateTask) => action.payload),
+    switchMap((task) => this.taskService.createTask(task).pipe(
+      map((task: Task) => new CreateTaskComplete(task)),
+      catchError((error) => of(new CreateTaskFailure(error))),
     )),
   );
 
