@@ -22,6 +22,14 @@ import {
   CreateTaskComplete,
   CreateTaskFailure,
   CreateTask,
+  UPDATE_TASK,
+  UpdateTask,
+  UpdateTaskComplete,
+  UpdateTaskFailure,
+  DeleteTask,
+  DELETE_TASK,
+  DeleteTaskComplete,
+  DeleteTaskFailure,
 } from '../actions/tasks.actions';
 import { TaskService } from '../services/task.service';
 import { Task } from '../models/tasks';
@@ -42,9 +50,29 @@ export class TasksEffects {
   public createTask: Observable<TasksActions> = this.actions$.pipe(
     ofType(CREATE_TASK),
     map((action: CreateTask) => action.payload),
-    switchMap((task) => this.taskService.createTask(task).pipe(
+    switchMap(({ dayId, task }) => this.taskService.createTask(dayId, task).pipe(
       map((task: Task) => new CreateTaskComplete(task)),
       catchError((error) => of(new CreateTaskFailure(error))),
+    )),
+  );
+
+  @Effect()
+  public updateTask: Observable<TasksActions> = this.actions$.pipe(
+    ofType(UPDATE_TASK),
+    map((action: UpdateTask) => action.payload),
+    switchMap((task: Task) => this.taskService.updateTask(task).pipe(
+      map((task: Task) => new UpdateTaskComplete(task)),
+      catchError((error) => of(new UpdateTaskFailure(error))),
+    )),
+  );
+
+  @Effect()
+  public deleteTask: Observable<TasksActions> = this.actions$.pipe(
+    ofType(DELETE_TASK),
+    map((action: DeleteTask) => action.payload),
+    switchMap(({ dayId, id }) => this.taskService.deleteTask(dayId, id).pipe(
+      map((id: string) => new DeleteTaskComplete(id)),
+      catchError((error) => of(new DeleteTaskFailure(error))),
     )),
   );
 

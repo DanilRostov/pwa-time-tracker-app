@@ -1,3 +1,18 @@
-<p>
-  create-modal works!
-</p>
+<div class="create-modal" *ngIf="isVisible">
+  <div class="input-block">
+    <label class="label" for="title">Title:</label>
+    <input class="input" id="title" type="text" [formControl]="title">
+  </div>
+  <div class="input-block">
+    <label class="label" for="prefix">Prefix:</label>
+    <input class="input" id="prefix" type="text" [formControl]="prefix">
+  </div>
+  <div class="input-block">
+    <label class="label" for="estimation">Estimation:</label>
+    <input class="input" id="estimation" type="number" [formControl]="estimation">
+  </div>
+  <div class="buttons">
+    <button class="button button--cancel" (click)="onCancelClick()">Cancel</button>
+    <button class="button button--create" (click)="onCreateClick()">Create</button>
+  </div>
+</div>

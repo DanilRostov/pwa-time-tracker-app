@@ -1,5 +1,7 @@
 <div class="dashboard">
-  <app-info></app-info>
-  <app-day></app-day>
-  <app-create-btn></app-create-btn>
+  <app-info [day]="currentDay"></app-info>
+  <swiper [(index)]="initialIndex" (indexChange)="onSlideChange($event)">
+    <app-day *ngFor="let day of days" [data]="day"></app-day>
+  </swiper>
+  <app-create-btn (createClick)="createTask($event)"></app-create-btn>
 </div>

@@ -1,0 +1,95 @@
+[
+  {
+    "id": "2019-11-16",
+    "date": "2019-11-16T15:21:15.108Z",
+    "tasks": [
+      {
+        "id": "id1",
+        "dayId": "2019-11-16",
+        "isPlanned": true,
+        "isDone": true,
+        "title": "Buy products for the dinner with some interesting drinks. So here is also a long 'title'",
+        "prefix": "OTHER",
+        "estimation": 0.5
+      },
+      {
+        "id": "id2",
+        "dayId": "2019-11-16",
+        "isPlanned": true,
+        "isDone": true,
+        "title": "Finish story with facets",
+        "prefix": "EPAM",
+        "estimation": 3
+      },
+      {
+        "id": "id3",
+        "dayId": "2019-11-16",
+        "isPlanned": true,
+        "isDone": true,
+        "title": "Meeting with Vlad",
+        "prefix": "RAKURS",
+        "estimation": 1
+      },
+      {
+        "id": "id4",
+        "dayId": "2019-11-16",
+        "isPlanned": false,
+        "isDone": true,
+        "title": "Read book",
+        "prefix": "OTHER",
+        "estimation": 1
+      },
+      {
+        "id": "id5",
+        "dayId": "2019-11-16",
+        "isPlanned": true,
+        "isDone": false,
+        "title": "Creat new patterns of beat",
+        "prefix": "MUSIC",
+        "estimation": 2
+      },
+      {
+        "id": "id6",
+        "dayId": "2019-11-16",
+        "isPlanned": true,
+        "isDone": false,
+        "title": "Send photos to the cloud",
+        "prefix": "OTHER",
+        "estimation": 0.5
+      },
+      {
+        "id": "id7",
+        "dayId": "2019-11-16",
+        "isPlanned": false,
+        "isDone": false,
+        "title": "Go the the GYM",
+        "prefix": "OTHER",
+        "estimation": 3
+      }
+    ]
+  },
+  {
+    "id": "2019-11-18",
+    "date": "2019-11-18T15:21:15.108Z",
+    "tasks": [
+      {
+        "id": "id8",
+        "dayId": "2019-11-18",
+        "isPlanned": true,
+        "isDone": false,
+        "title": "Finish interactivity of Freetimedom application",
+        "prefix": "EPAM",
+        "estimation": 3
+      },
+      {
+        "id": "id9",
+        "dayId": "2019-11-18",
+        "isPlanned": true,
+        "isDone": false,
+        "title": "Start making slides for presentation",
+        "prefix": "EPAM",
+        "estimation": 1
+      }
+    ]
+  }
+]

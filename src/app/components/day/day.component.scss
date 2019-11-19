@@ -1,3 +1,7 @@
 .day {
   padding-bottom: 61px;
 }
+
+.empty-day {
+ height: calc(100vh - 80px - 70px - 61px);
+}

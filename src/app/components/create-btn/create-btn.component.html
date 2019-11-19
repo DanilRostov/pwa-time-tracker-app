@@ -1,6 +1,11 @@
 <div class="create">
   <input class="input" type="text" [formControl]="title">
-  <!-- <button class="button button--location">Location</button> -->
-  <button class="button button--create" (click)="onCreateClick()">Create</button>
+  <button class="button button--create" (click)="openCreateModal()">Create</button>
+  <app-create-modal *ngIf="isCreateModalVisible"
+    [isVisible]="isCreateModalVisible" 
+    [taskData]="taskData"
+    (cancelClick)="onCancelClick($event)"
+    (createClick)="onCreateModalClick($event)">
+  </app-create-modal>
 </div>
 

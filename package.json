@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start-s": "ng serve --host 192.168.1.37",
+    "start-s": "ng serve --host 192.168.1.35",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -21,9 +21,11 @@
     "@angular/platform-browser-dynamic": "~7.2.0",
     "@angular/router": "~7.2.0",
     "@ngrx/effects": "^8.5.0",
+    "@ngrx/router-store": "^8.5.1",
     "@ngrx/store": "^8.5.0",
     "@ngrx/store-devtools": "^8.5.0",
     "core-js": "^2.5.4",
+    "ngx-swiper-wrapper": "^8.0.2",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"

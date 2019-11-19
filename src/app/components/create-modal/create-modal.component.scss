@@ -1,0 +1,54 @@
+.create-modal {
+  padding: 12px 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 210px;
+  background-color: rgba(255, 229, 127, 0.8);
+}
+
+.input-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.label {
+  color: #E65100;
+  min-width: 80px;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.input {
+  font-size: 16px;
+  margin-left: 8px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 7px;
+  border: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  margin: 0;
+  font-size: 18px;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 4px;
+
+  &--create {
+    color: #fff;
+    background-color: #E65100;
+  }
+
+  &--cancel {
+    color: #E65100;
+    background-color: #fff;
+  }
+}

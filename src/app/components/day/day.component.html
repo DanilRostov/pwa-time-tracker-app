@@ -1,6 +1,16 @@
 <div class="day">
-  <app-category [type]="types.notPlannedAndDone" [tasks]="notPlannedAndDoneTasks"></app-category>
-  <app-category [type]="types.plannedAndDone" [tasks]="plannedAndDoneTasks"></app-category>
-  <app-category [type]="types.planned" [tasks]="plannedTasks"></app-category>
+  <div *ngIf="!isDayEmpty else emptyDay">
+    <app-category *ngIf="notPlannedAndDoneTasks.length" 
+      [type]="types.notPlannedAndDone" 
+      [tasks]="notPlannedAndDoneTasks">
+    </app-category>
+    <app-category [type]="types.plannedAndDone" [tasks]="plannedAndDoneTasks"></app-category>
+    <app-category [type]="types.planned" [tasks]="plannedTasks"></app-category>
+  </div>
+  <ng-template #emptyDay>
+    <div class="empty-day">
+      <span>No tasks yet</span>
+    </div>
+  </ng-template>
 </div>
 

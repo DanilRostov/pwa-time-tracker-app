@@ -1,5 +1,8 @@
 import { Action } from '@ngrx/store';
-import { Task } from '../models/tasks';
+import { 
+  Task, 
+  CreateTaskData,
+} from '../models/tasks';
 
 export const LOAD_TASKS = '[Tasks] Load tasks';
 export const LOAD_TASKS_COMPLETE = '[Tasks] Load tasks complete';
@@ -34,7 +37,7 @@ export class LoadTasksFailure implements Action {
 
 export class CreateTask implements Action {
   public readonly type = CREATE_TASK;
-  constructor(public payload: Task) {}
+  constructor(public payload: { dayId: string, task: CreateTaskData }) {}
 }
 
 export class CreateTaskComplete implements Action {
@@ -49,6 +52,7 @@ export class CreateTaskFailure implements Action {
 
 export class DeleteTask implements Action {
   public readonly type = DELETE_TASK;
+  constructor(public payload: { dayId: string, id: string }) {}
 }
 
 export class DeleteTaskComplete implements Action {
@@ -63,6 +67,7 @@ export class DeleteTaskFailure implements Action {
 
 export class UpdateTask implements Action {
   public readonly type = UPDATE_TASK;
+  constructor(public payload: Task) {}
 }
 
 export class UpdateTaskComplete implements Action {

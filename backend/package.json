@@ -1,0 +1,27 @@
+{
+  "name": "freetimedom-backend",
+  "version": "0.0.1",
+  "description": "backend for freetimedom application",
+  "main": "server.js",
+  "scripts": {
+    "start": "npm run clean && npm run build && node dist/index.js",
+    "dev": "nodemon --watch src/ --exec npm run start",
+    "clean": "rm -rf dist",
+    "build": "babel src --out-dir dist"
+  },
+  "author": "Danil Rostov",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "mongodb": "^3.1.8"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "nodemon": "^1.18.2"
+  }
+}

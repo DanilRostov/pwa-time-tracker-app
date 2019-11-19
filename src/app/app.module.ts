@@ -5,6 +5,10 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { SwiperModule } from 'ngx-swiper-wrapper';
+import { SWIPER_CONFIG } from 'ngx-swiper-wrapper';
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -22,8 +26,15 @@ import { CreateBtnComponent } from './components/create-btn/create-btn.component
 import { CreateModalComponent } from './components/create-modal/create-modal.component';
 import { LocationModalComponent } from './components/location-modal/location-modal.component';
 import { RemoveBtnComponent } from './components/remove-btn/remove-btn.component';
-import { tasksReducer } from './reducers/tasks.reducer';
 import { TasksEffects } from './effects/tasks.effects';
+import { DayEffects } from './effects/day.effects';
+import { HttpClientModule } from '@angular/common/http';
+import { daysReducer } from './reducers/days.reducer';
+
+const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
+  direction: 'horizontal',
+  slidesPerView: 'auto'
+};
 
 @NgModule({
   declarations: [
@@ -47,12 +58,19 @@ import { TasksEffects } from './effects/tasks.effects';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({ tasks: tasksReducer }),
-    EffectsModule.forRoot([ TasksEffects ]),
+    SwiperModule,
+    StoreModule.forRoot({ days: daysReducer }),
+    EffectsModule.forRoot([ DayEffects, TasksEffects ]),
     StoreDevtoolsModule.instrument(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: SWIPER_CONFIG,
+      useValue: DEFAULT_SWIPER_CONFIG
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { 
+  Component,
+  Input,
+} from '@angular/core';
+import { 
+  Task, 
+  DoneData,
+} from 'src/app/models/tasks';
+import { Store } from '@ngrx/store';
+import { 
+  UpdateTask, 
+  DeleteTask,
+} from 'src/app/actions/tasks.actions';
+import { State } from 'src/app/reducers/days.reducer';
 
 @Component({
   selector: 'app-task',
@@ -6,6 +19,23 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent {
-  @Input() public task: any;
+  @Input() public task: Task;
 
+  constructor(
+    private store: Store<State>,
+  ) { }
+
+  public onDoneClick(doneData: DoneData) {
+    this.store.dispatch(new UpdateTask({
+      ...this.task,
+      isDone: doneData.isDone,
+    }));
+  }
+
+  public onRemoveClick() {
+    this.store.dispatch(new DeleteTask({
+      dayId: this.task.dayId,
+      id: this.task.id,
+    }));
+  }
 }

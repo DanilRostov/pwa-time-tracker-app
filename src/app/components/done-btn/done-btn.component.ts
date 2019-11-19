@@ -1,16 +1,35 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  Input,
+  EventEmitter,
+  Output,
+  OnDestroy,
+} from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { DoneData } from 'src/app/models/tasks';
 
 @Component({
   selector: 'app-done-btn',
   templateUrl: './done-btn.component.html',
   styleUrls: ['./done-btn.component.scss']
 })
-export class DoneBtnComponent implements OnInit {
+export class DoneBtnComponent implements OnInit, OnDestroy {
   @Input() public isDone: boolean;
   @Input() public id: string;
-  @ViewChild('input') public input: ElementRef;
+  @Output() public doneClick = new EventEmitter<DoneData>();
+  public doneButton = new FormControl(this.isDone);
+  public subscriptions = new Subscription();
 
   public ngOnInit() {
-    this.input.nativeElement.checked = this.isDone;
+    this.doneButton.setValue(this.isDone);
+    this.subscriptions.add(this.doneButton.valueChanges.subscribe((isDone) => {
+      this.doneClick.emit({ id: this.id, isDone });
+    }));
+  }
+
+  public ngOnDestroy() {
+    this.subscriptions.unsubscribe();
   }
 }

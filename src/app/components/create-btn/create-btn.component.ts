@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { 
+  Component, 
+  Output, 
+  EventEmitter,
+} from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { Store } from '@ngrx/store';
-import { State } from 'src/app/reducers/tasks.reducer';
-import { CreateTask } from 'src/app/actions/tasks.actions';
+import { CreateTaskData } from 'src/app/models/tasks';
 
 @Component({
   selector: 'app-create-btn',
@@ -11,25 +13,30 @@ import { CreateTask } from 'src/app/actions/tasks.actions';
 })
 export class CreateBtnComponent {
   public title = new FormControl('');
+  public isCreateModalVisible: boolean;
+  public taskData: CreateTaskData;
+  @Output() public createClick = new EventEmitter<CreateTaskData>();
 
-  constructor(
-    private store: Store<State>,
-  ) { }
-
-  public onCreateClick() {
-    const taskData = {
-      id: 'testId',
+  public openCreateModal() {
+    this.taskData = {
       title: this.title.value,
-      isPlanned: true,
-      isDone: false,
-      prefix: 'TEST',
-      estimation: 0.5,
+      prefix: null,
+      estimation: null,
     }
-    this.store.dispatch(new CreateTask(taskData));
+    this.isCreateModalVisible = true;
+  }
+
+  public onCreateModalClick(taskData: CreateTaskData) {
+    this.createClick.emit(taskData);
     this.resetData();
   }
 
+  public onCancelClick(event) {
+    this.isCreateModalVisible = event;
+  }
+
   public resetData() {
+    this.isCreateModalVisible = false;
     this.title.setValue('');
     window.scrollTo({
       top: document.body.clientHeight,

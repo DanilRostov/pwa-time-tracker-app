@@ -1,4 +1,7 @@
 <div class="done-btn">
-  <input #input class="button" type="checkbox" [attr.id]="id">
+  <input class="button" 
+    type="checkbox" 
+    [attr.id]="id" 
+    [formControl]="doneButton">
   <label [attr.for]="id"></label>
 </div>
