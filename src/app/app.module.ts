@@ -30,6 +30,8 @@ import { TasksEffects } from './effects/tasks.effects';
 import { DayEffects } from './effects/day.effects';
 import { HttpClientModule } from '@angular/common/http';
 import { daysReducer } from './reducers/days.reducer';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
   direction: 'horizontal',
@@ -64,6 +66,7 @@ const DEFAULT_SWIPER_CONFIG: SwiperConfigInterface = {
     StoreModule.forRoot({ days: daysReducer }),
     EffectsModule.forRoot([ DayEffects, TasksEffects ]),
     StoreDevtoolsModule.instrument(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     {

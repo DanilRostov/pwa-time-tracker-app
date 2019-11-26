@@ -18,6 +18,7 @@ import { DoneData } from 'src/app/models/tasks';
 export class DoneBtnComponent implements OnInit, OnDestroy {
   @Input() public isDone: boolean;
   @Input() public id: string;
+  @Input() public title: string;
   @Output() public doneClick = new EventEmitter<DoneData>();
   public doneButton = new FormControl(this.isDone);
   public subscriptions = new Subscription();
@@ -26,10 +27,23 @@ export class DoneBtnComponent implements OnInit, OnDestroy {
     this.doneButton.setValue(this.isDone);
     this.subscriptions.add(this.doneButton.valueChanges.subscribe((isDone) => {
       this.doneClick.emit({ id: this.id, isDone });
+      if (isDone) {
+        this.showNotification();
+      }
     }));
   }
 
   public ngOnDestroy() {
     this.subscriptions.unsubscribe();
+  }
+
+  public showNotification() {
+    if (Notification.permission === 'granted') {
+      navigator.serviceWorker.getRegistration().then((reg) => {
+        if (reg) {
+          reg.showNotification(`Task ${this.title} was done!`);
+        }
+      });
+    }
   }
 }

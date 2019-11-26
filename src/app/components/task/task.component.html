@@ -1,5 +1,5 @@
 <div class="task">
-  <app-done-btn [isDone]="task.isDone" [id]="task.id" (doneClick)="onDoneClick($event)"></app-done-btn>
+  <app-done-btn [isDone]="task.isDone" [id]="task.id" [title]="task.title" (doneClick)="onDoneClick($event)"></app-done-btn>
   <div class="text">
     <span class="prefix">[{{task.prefix}}]</span>
     <span class="title">{{task.title}}</span>
