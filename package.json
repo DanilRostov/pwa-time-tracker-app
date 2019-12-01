@@ -7,6 +7,8 @@
     "start-s": "ng serve --host 172.20.10.2 --ssl --ssl-key localhost.key  --ssl-cert localhost.crt",
     "start-l": "cd dist/freetimedom && ws --hostname 192.168.1.50 --https",
     "start-b": "cd backend && npm run dev",
+    "start-all": "npm run start-b && npm start",
+    "start-all-host": "npm run start-b && ng serve --host 172.20.10.2",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
