@@ -6,9 +6,9 @@ import {
 import { 
   Task, 
   TaskStats,
-} from 'src/app/models/tasks';
-import { CounterItem } from 'src/app/models/counter';
-import { Day } from 'src/app/models/day';
+} from 'src/app/dashboard/models/tasks';
+import { CounterItem } from 'src/app/dashboard/models/counter';
+import { Day } from 'src/app/dashboard/models/day';
 
 const initialStats = {
   notPlannedAndDone: { count: 0, estimation: 0},

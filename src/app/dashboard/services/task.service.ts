@@ -5,7 +5,7 @@ import {
   Task, 
   CreateTaskData,
 } from '../models/tasks';
-import { tasks } from '../api/tasks';
+import { tasks } from '../../api/tasks';
 
 @Injectable({
   providedIn: 'root'

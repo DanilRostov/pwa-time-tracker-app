@@ -3,8 +3,8 @@ import {
   Input,
   OnChanges,
 } from '@angular/core';
-import { TaskStats } from 'src/app/models/tasks';
-import { CounterItem } from 'src/app/models/counter';
+import { TaskStats } from 'src/app/dashboard/models/tasks';
+import { CounterItem } from 'src/app/dashboard/models/counter';
 
 @Component({
   selector: 'app-tasks-counter',

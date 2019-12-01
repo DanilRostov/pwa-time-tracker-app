@@ -4,7 +4,7 @@ import {
   EventEmitter,
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { CreateTaskData } from 'src/app/models/tasks';
+import { CreateTaskData } from 'src/app/dashboard/models/tasks';
 
 @Component({
   selector: 'app-create-btn',

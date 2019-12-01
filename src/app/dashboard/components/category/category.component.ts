@@ -3,7 +3,7 @@ import {
   OnInit, 
   Input,
 } from '@angular/core';
-import { TYPES } from 'src/app/consts/tasks';
+import { TYPES } from 'src/app/dashboard/consts/tasks';
 
 @Component({
   selector: 'app-category',

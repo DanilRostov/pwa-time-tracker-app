@@ -4,8 +4,8 @@ import {
   OnChanges,
 } from '@angular/core';
 
-import { TYPES } from 'src/app/consts/tasks';
-import { Day } from 'src/app/models/day';
+import { TYPES } from 'src/app/dashboard/consts/tasks';
+import { Day } from 'src/app/dashboard/models/day';
 
 @Component({
   selector: 'app-day',

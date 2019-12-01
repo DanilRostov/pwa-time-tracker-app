@@ -3,17 +3,17 @@ import {
   OnInit,
   OnDestroy,
 } from '@angular/core';
-import { daysSettings } from 'src/app/consts/day';
-import { Day } from 'src/app/models/day';
+import { daysSettings } from 'src/app/dashboard/consts/day';
+import { Day } from 'src/app/dashboard/models/day';
 import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { 
   State, 
   selectDays,
-} from 'src/app/reducers/days.reducer';
-import { LoadDays } from 'src/app/actions/day.actions';
-import { CreateTaskData } from 'src/app/models/tasks';
-import { CreateTask } from 'src/app/actions/tasks.actions';
+} from 'src/app/dashboard/reducers/days.reducer';
+import { LoadDays } from 'src/app/dashboard/actions/day.actions';
+import { CreateTaskData } from 'src/app/dashboard/models/tasks';
+import { CreateTask } from 'src/app/dashboard/actions/tasks.actions';
 
 @Component({
   selector: 'app-dashboard',

@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Subscription } from 'rxjs';
-import { DoneData } from 'src/app/models/tasks';
+import { DoneData } from 'src/app/dashboard/models/tasks';
 
 @Component({
   selector: 'app-done-btn',

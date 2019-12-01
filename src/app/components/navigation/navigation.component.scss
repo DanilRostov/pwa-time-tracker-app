@@ -1,0 +1,32 @@
+.navigation {
+  width: 100vw;
+  height: 50px;
+  background: #fff;
+  border-top: 1px solid lightgrey;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999999;
+}
+
+.nav-item {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  &--active {
+    background-color:#EFEBE9;
+  }
+
+  img {
+    width: 37px;
+    height: 35px;
+  }
+}

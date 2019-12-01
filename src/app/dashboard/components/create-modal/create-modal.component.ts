@@ -5,7 +5,7 @@ import {
   Output,
   EventEmitter,
 } from '@angular/core';
-import { CreateTaskData } from 'src/app/models/tasks';
+import { CreateTaskData } from 'src/app/dashboard/models/tasks';
 import { FormControl } from '@angular/forms';
 
 @Component({

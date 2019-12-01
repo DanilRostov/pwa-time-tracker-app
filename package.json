@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "start-s": "ng serve --host 172.20.10.2 --ssl --ssl-key localhost.key  --ssl-cert localhost.crt",
+    "start-l": "cd dist/freetimedom && ws --hostname 192.168.1.50 --https",
+    "start-b": "cd backend && npm run dev",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

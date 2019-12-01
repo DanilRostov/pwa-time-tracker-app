@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 import { Day } from '../models/day';
-import { days } from '../api/days';
+import { days } from '../../api/days';
 
 @Injectable({
   providedIn: 'root'

@@ -5,13 +5,13 @@ import {
 import { 
   Task, 
   DoneData,
-} from 'src/app/models/tasks';
+} from 'src/app/dashboard/models/tasks';
 import { Store } from '@ngrx/store';
 import { 
   UpdateTask, 
   DeleteTask,
-} from 'src/app/actions/tasks.actions';
-import { State } from 'src/app/reducers/days.reducer';
+} from 'src/app/dashboard/actions/tasks.actions';
+import { State } from 'src/app/dashboard/reducers/days.reducer';
 
 @Component({
   selector: 'app-task',
